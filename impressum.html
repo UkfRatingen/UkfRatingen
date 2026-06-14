@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Impressum – UKF-Ratingen</title>
+  <meta name="robots" content="noindex, follow"/>
+  <link rel="canonical" href="https://ukf-ratingen.com/impressum.html"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="stylesheet" href="assets/fonts/fonts.css"/>
+  <link rel="stylesheet" href="assets/fa/css/fontawesome.min.css"/>
+  <link rel="stylesheet" href="assets/fa/css/solid.min.css"/>
+
+  <style>
+    :root {
+      --forest:   #1a3d2b;
+      --forest-2: #254d38;
+      --green:    #2d6a4f;
+      --green-lt: #40916c;
+      --gold:     #b5893a;
+      --gold-lt:  #d4a853;
+      --cream:    #f8f4ed;
+      --warm-off: #f0ebe0;
+      --white:    #ffffff;
+      --border:   #ddd5c5;
+      --muted:    #7a6e5f;
+      --text:     #1e1a14;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--forest);
+      color: var(--text);
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .page-wrapper {
+      max-width: 1400px; margin: 0 auto;
+      background: var(--cream);
+      border-radius: 20px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.55);
+      min-height: calc(100vh - 40px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 5%;
+      background: rgba(248,244,237,0.97);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      border-bottom: 1px solid var(--border);
+      border-radius: 20px 20px 0 0;
+    }
+
+    .logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none;
+    }
+    .logo-mark {
+      width: 38px; height: 38px; border-radius: 8px;
+      background: var(--forest);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-mark svg { width: 22px; height: 22px; fill: none; }
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--forest); line-height: 1.1;
+      letter-spacing: 0.01em;
+    }
+    .logo-sub {
+      font-size: 0.65rem; font-weight: 400;
+      color: var(--muted); letter-spacing: 0.08em;
+      text-transform: uppercase; display: block;
+    }
+
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.84rem; font-weight: 600; color: var(--muted);
+      text-decoration: none; padding: 0.45rem 0.85rem;
+      border-radius: 6px; transition: all .2s;
+    }
+    .nav-back:hover { color: var(--forest); background: var(--warm-off); }
+
+    /* CONTENT */
+    .legal-content {
+      flex: 1;
+      padding: 4rem 5% 5rem;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .kicker {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--green-lt);
+      display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.9rem;
+    }
+    .kicker::before { content:''; width: 26px; height: 1px; background: var(--green-lt); }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400; color: var(--forest);
+      line-height: 1.2; margin-bottom: 2.5rem;
+    }
+    h1 em { font-style: italic; color: var(--green-lt); }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--forest); margin: 2rem 0 0.5rem;
+    }
+
+    p {
+      font-size: 0.88rem; color: var(--muted);
+      line-height: 1.85; margin-bottom: 0.8rem;
+    }
+
+    .source-note {
+      font-size: 0.78rem; color: var(--border); margin-top: 2rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--forest);
+      border-radius: 0 0 20px 20px;
+      padding: 3.5rem 5% 2rem;
+      margin-top: auto;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 3rem; padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .footer-logo-wrap {
+      display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem;
+    }
+    .footer-logo-mark {
+      width: 34px; height: 34px; border-radius: 7px;
+      background: rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .footer-logo-mark svg { width: 18px; height: 18px; fill: none; }
+    .footer-logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; color: var(--white); font-weight: 700;
+    }
+    .footer-brand p { font-size: 0.82rem; color: rgba(255,255,255,0.38); line-height: 1.8; max-width: 260px; }
+    .footer-col h5 {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.14em; color: rgba(255,255,255,0.28); margin-bottom: 1.2rem;
+    }
+    .footer-col a {
+      display: block; font-size: 0.83rem; color: rgba(255,255,255,0.5);
+      text-decoration: none; margin-bottom: 0.6rem; transition: color .2s;
+    }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      max-width: 1100px; margin: 0 auto; padding-top: 1.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.72rem; color: rgba(255,255,255,0.2); flex-wrap: wrap; gap: 0.5rem;
+    }
+    .footer-legal { display: flex; gap: 1.5rem; }
+    .footer-legal a { color: rgba(255,255,255,0.3); text-decoration: none; font-size: 0.72rem; transition: color .15s; }
+    .footer-legal a:hover { color: rgba(255,255,255,0.6); }
+
+    @media(max-width: 960px) {
+      body { padding: 0; }
+      .page-wrapper { border-radius: 0; box-shadow: none; }
+      header { border-radius: 0; }
+      footer { border-radius: 0; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <header>
+    <a class="logo" href="index.html">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" stroke="white" stroke-width="1.8" stroke-linecap="round">
+          <path d="M3 17 C7 17 9 7 12 7 C15 7 17 17 21 17"/>
+          <circle cx="12" cy="7" r="1.5" fill="white" stroke="none"/>
+        </svg>
+      </div>
+      <div>
+        <span class="logo-text">UKF Ratingen</span>
+        <span class="logo-sub">Individuelle Busreisen</span>
+      </div>
+    </a>
+    <a class="nav-back" href="index.html"><i class="fas fa-arrow-left"></i> Zurück zur Startseite</a>
+  </header>
+
+  <main class="legal-content">
+    <div class="kicker">Rechtliches</div>
+    <h1>Impressum</h1>
+
+    <h2>UKF-Ratingen – Unser kleines Fahrgeschäft</h2>
+    <p>Homberger Straße 17<br>40882 Ratingen</p>
+    <p>Tel.: +49 2102 95 30 71 5<br>Mobil: +49 177 33 96 4 73<br>E-Mail: service@ukf-ratingen.com</p>
+    <p>Inhaber: Andreas Teschner<br>Sitz: Ratingen<br>USt-IdNr.: DE186040873</p>
+
+    <h2>1. Haftungsbeschränkung</h2>
+    <p>Die Inhalte dieser Website werden mit größtmöglicher Sorgfalt erstellt. Der Anbieter übernimmt jedoch keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Inhalte. Die Nutzung der Inhalte der Website erfolgt auf eigene Gefahr des Nutzers. Namentlich gekennzeichnete Beiträge geben die Meinung des jeweiligen Autors und nicht immer die Meinung des Anbieters wieder. Mit der reinen Nutzung der Website des Anbieters kommt keinerlei Vertragsverhältnis zwischen dem Nutzer und dem Anbieter zustande.</p>
+
+    <h2>2. Externe Links</h2>
+    <p>Diese Website enthält Verknüpfungen zu Websites Dritter („externe Links"). Diese Websites unterliegen der Haftung der jeweiligen Betreiber. Der Anbieter hat bei der erstmaligen Verknüpfung der externen Links die fremden Inhalte daraufhin überprüft, ob etwaige Rechtsverstöße bestehen. Zu dem Zeitpunkt waren keine Rechtsverstöße ersichtlich. Der Anbieter hat keinerlei Einfluss auf die aktuelle und zukünftige Gestaltung und auf die Inhalte der verknüpften Seiten. Das Setzen von externen Links bedeutet nicht, dass sich der Anbieter die hinter dem Verweis oder Link liegenden Inhalte zu Eigen macht. Eine ständige Kontrolle der externen Links ist für den Anbieter ohne konkrete Hinweise auf Rechtsverstöße nicht zumutbar. Bei Kenntnis von Rechtsverstößen werden jedoch derartige externe Links unverzüglich gelöscht.</p>
+
+    <h2>3. Urheber- und Leistungsschutzrechte</h2>
+    <p>Die auf dieser Website veröffentlichten Inhalte unterliegen dem deutschen Urheber- und Leistungsschutzrecht. Jede vom deutschen Urheber- und Leistungsschutzrecht nicht zugelassene Verwertung bedarf der vorherigen schriftlichen Zustimmung des Anbieters oder jeweiligen Rechteinhabers. Dies gilt insbesondere für Vervielfältigung, Bearbeitung, Übersetzung, Einspeicherung, Verarbeitung bzw. Wiedergabe von Inhalten in Datenbanken oder anderen elektronischen Medien und Systemen. Inhalte und Rechte Dritter sind dabei als solche gekennzeichnet. Die unerlaubte Vervielfältigung oder Weitergabe einzelner Inhalte oder kompletter Seiten ist nicht gestattet und strafbar. Lediglich die Herstellung von Kopien und Downloads für den persönlichen, privaten und nicht kommerziellen Gebrauch ist erlaubt.</p>
+    <p>Die Darstellung dieser Website in fremden Frames ist nur mit schriftlicher Erlaubnis zulässig.</p>
+
+    <h2>5. Besondere Nutzungsbedingungen</h2>
+    <p>Soweit besondere Bedingungen für einzelne Nutzungen dieser Website von den vorgenannten Nummern 1. bis 4. abweichen, wird an entsprechender Stelle ausdrücklich darauf hingewiesen. In diesem Falle gelten im jeweiligen Einzelfall die besonderen Nutzungsbedingungen.</p>
+
+    <p class="source-note">Quelle: Muster-Disclaimer von Juraforum.de in Kooperation mit Experten-Branchenbuch.de</p>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <div class="footer-logo-mark">
+            <svg viewBox="0 0 24 24" stroke="white" stroke-width="1.8" stroke-linecap="round">
+              <path d="M3 17 C7 17 9 7 12 7 C15 7 17 17 21 17"/>
+              <circle cx="12" cy="7" r="1.5" fill="white" stroke="none"/>
+            </svg>
+          </div>
+          <span class="footer-logo-text">UKF Ratingen</span>
+        </div>
+        <p>Individuelle Busreisen durch Europa mit Andreas Teschner. Ihr Weg, Ihr Tempo, Ihre Erinnerungen.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <a href="index.html#schritte">Wie es funktioniert</a>
+        <a href="index.html#reisen">Reiseideen</a>
+        <a href="index.html#andreas">Über Andreas</a>
+        <a href="index.html#kontakt">Erstgespräch vereinbaren</a>
+      </div>
+      <div class="footer-col">
+        <h5>Kontakt &amp; Recht</h5>
+        <a href="tel:+4921029530715">+49 2102 95 30 71 5</a>
+        <a href="mailto:service@ukf-ratingen.com">service@ukf-ratingen.com</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 UKF-Ratingen · Andreas Teschner</span>
+      <div class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

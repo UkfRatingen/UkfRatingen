@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Datenschutz – UKF-Ratingen</title>
+  <meta name="robots" content="noindex, follow"/>
+  <link rel="canonical" href="https://ukf-ratingen.com/datenschutz.html"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="stylesheet" href="assets/fonts/fonts.css"/>
+  <link rel="stylesheet" href="assets/fa/css/fontawesome.min.css"/>
+  <link rel="stylesheet" href="assets/fa/css/solid.min.css"/>
+
+  <style>
+    :root {
+      --forest:   #1a3d2b;
+      --forest-2: #254d38;
+      --green:    #2d6a4f;
+      --green-lt: #40916c;
+      --gold:     #b5893a;
+      --gold-lt:  #d4a853;
+      --cream:    #f8f4ed;
+      --warm-off: #f0ebe0;
+      --white:    #ffffff;
+      --border:   #ddd5c5;
+      --muted:    #7a6e5f;
+      --text:     #1e1a14;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--forest);
+      color: var(--text);
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .page-wrapper {
+      max-width: 1400px; margin: 0 auto;
+      background: var(--cream);
+      border-radius: 20px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.55);
+      min-height: calc(100vh - 40px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 5%;
+      background: rgba(248,244,237,0.97);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      border-bottom: 1px solid var(--border);
+      border-radius: 20px 20px 0 0;
+    }
+
+    .logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none;
+    }
+    .logo-mark {
+      width: 38px; height: 38px; border-radius: 8px;
+      background: var(--forest);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-mark svg { width: 22px; height: 22px; fill: none; }
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--forest); line-height: 1.1;
+      letter-spacing: 0.01em;
+    }
+    .logo-sub {
+      font-size: 0.65rem; font-weight: 400;
+      color: var(--muted); letter-spacing: 0.08em;
+      text-transform: uppercase; display: block;
+    }
+
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.84rem; font-weight: 600; color: var(--muted);
+      text-decoration: none; padding: 0.45rem 0.85rem;
+      border-radius: 6px; transition: all .2s;
+    }
+    .nav-back:hover { color: var(--forest); background: var(--warm-off); }
+
+    /* CONTENT */
+    .legal-content {
+      flex: 1;
+      padding: 4rem 5% 5rem;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .kicker {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--green-lt);
+      display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.9rem;
+    }
+    .kicker::before { content:''; width: 26px; height: 1px; background: var(--green-lt); }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400; color: var(--forest);
+      line-height: 1.2; margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--forest); margin: 2rem 0 0.5rem;
+    }
+
+    p {
+      font-size: 0.88rem; color: var(--muted);
+      line-height: 1.85; margin-bottom: 0.8rem;
+    }
+
+    ul {
+      padding-left: 1.3rem; margin-bottom: 0.8rem;
+    }
+    li {
+      font-size: 0.88rem; color: var(--muted);
+      line-height: 1.85; margin-bottom: 0.3rem;
+    }
+
+    a { color: var(--green-lt); }
+    a:hover { color: var(--green); }
+
+    .source-note {
+      font-size: 0.78rem; color: var(--border); margin-top: 2rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--forest);
+      border-radius: 0 0 20px 20px;
+      padding: 3.5rem 5% 2rem;
+      margin-top: auto;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 3rem; padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .footer-logo-wrap {
+      display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem;
+    }
+    .footer-logo-mark {
+      width: 34px; height: 34px; border-radius: 7px;
+      background: rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .footer-logo-mark svg { width: 18px; height: 18px; fill: none; }
+    .footer-logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; color: var(--white); font-weight: 700;
+    }
+    .footer-brand p { font-size: 0.82rem; color: rgba(255,255,255,0.38); line-height: 1.8; max-width: 260px; }
+    .footer-col h5 {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.14em; color: rgba(255,255,255,0.28); margin-bottom: 1.2rem;
+    }
+    .footer-col a {
+      display: block; font-size: 0.83rem; color: rgba(255,255,255,0.5);
+      text-decoration: none; margin-bottom: 0.6rem; transition: color .2s;
+    }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      max-width: 1100px; margin: 0 auto; padding-top: 1.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.72rem; color: rgba(255,255,255,0.2); flex-wrap: wrap; gap: 0.5rem;
+    }
+    .footer-legal { display: flex; gap: 1.5rem; }
+    .footer-legal a { color: rgba(255,255,255,0.3); text-decoration: none; font-size: 0.72rem; transition: color .15s; }
+    .footer-legal a:hover { color: rgba(255,255,255,0.6); }
+
+    @media(max-width: 960px) {
+      body { padding: 0; }
+      .page-wrapper { border-radius: 0; box-shadow: none; }
+      header { border-radius: 0; }
+      footer { border-radius: 0; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <header>
+    <a class="logo" href="index.html">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" stroke="white" stroke-width="1.8" stroke-linecap="round">
+          <path d="M3 17 C7 17 9 7 12 7 C15 7 17 17 21 17"/>
+          <circle cx="12" cy="7" r="1.5" fill="white" stroke="none"/>
+        </svg>
+      </div>
+      <div>
+        <span class="logo-text">UKF Ratingen</span>
+        <span class="logo-sub">Individuelle Busreisen</span>
+      </div>
+    </a>
+    <a class="nav-back" href="index.html"><i class="fas fa-arrow-left"></i> Zurück zur Startseite</a>
+  </header>
+
+  <main class="legal-content">
+    <div class="kicker">Rechtliches</div>
+    <h1>Datenschutzerklärung</h1>
+
+    <p>Wir freuen uns sehr über Ihr Interesse an unserem Unternehmen. Datenschutz hat einen besonders hohen Stellenwert für die Geschäftsleitung der UKF – Unser kleines Fahrgeschäft. Eine Nutzung der Internetseiten der UKF – Unser kleines Fahrgeschäft ist grundsätzlich ohne jede Angabe personenbezogener Daten möglich. Sofern eine betroffene Person besondere Services unseres Unternehmens über unsere Internetseite in Anspruch nehmen möchte, könnte jedoch eine Verarbeitung personenbezogener Daten erforderlich werden. Ist die Verarbeitung personenbezogener Daten erforderlich und besteht für eine solche Verarbeitung keine gesetzliche Grundlage, holen wir generell eine Einwilligung der betroffenen Person ein.</p>
+    <p>Die Verarbeitung personenbezogener Daten, beispielsweise des Namens, der Anschrift, E-Mail-Adresse oder Telefonnummer einer betroffenen Person, erfolgt stets im Einklang mit der Datenschutz-Grundverordnung und in Übereinstimmung mit den für die UKF – Unser kleines Fahrgeschäft geltenden landesspezifischen Datenschutzbestimmungen. Mittels dieser Datenschutzerklärung möchte unser Unternehmen die Öffentlichkeit über Art, Umfang und Zweck der von uns erhobenen, genutzten und verarbeiteten personenbezogenen Daten informieren. Ferner werden betroffene Personen mittels dieser Datenschutzerklärung über die ihnen zustehenden Rechte aufgeklärt.</p>
+    <p>Die UKF – Unser kleines Fahrgeschäft hat als für die Verarbeitung Verantwortlicher zahlreiche technische und organisatorische Maßnahmen umgesetzt, um einen möglichst lückenlosen Schutz der über diese Internetseite verarbeiteten personenbezogenen Daten sicherzustellen. Dennoch können internetbasierte Datenübertragungen grundsätzlich Sicherheitslücken aufweisen, sodass ein absoluter Schutz nicht gewährleistet werden kann. Aus diesem Grund steht es jeder betroffenen Person frei, personenbezogene Daten auch auf alternativen Wegen, beispielsweise telefonisch, an uns zu übermitteln.</p>
+
+    <h2>1. Begriffsbestimmungen</h2>
+    <p>Die Datenschutzerklärung der UKF – Unser kleines Fahrgeschäft beruht auf den Begrifflichkeiten der Datenschutz-Grundverordnung (DS-GVO). Wir verwenden in dieser Datenschutzerklärung unter anderem die folgenden Begriffe:</p>
+    <ul>
+      <li><strong>a) Personenbezogene Daten:</strong> Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen.</li>
+      <li><strong>b) Betroffene Person:</strong> Jede identifizierte oder identifizierbare natürliche Person, deren personenbezogene Daten vom Verantwortlichen verarbeitet werden.</li>
+      <li><strong>c) Verarbeitung:</strong> Jeder Vorgang im Zusammenhang mit personenbezogenen Daten wie das Erheben, Erfassen, Speichern, Verwenden, Offenlegen oder Löschen.</li>
+      <li><strong>d) Einschränkung der Verarbeitung:</strong> Markierung gespeicherter personenbezogener Daten mit dem Ziel, ihre künftige Verarbeitung einzuschränken.</li>
+      <li><strong>e) Profiling:</strong> Automatisierte Verarbeitung personenbezogener Daten zur Bewertung bestimmter persönlicher Aspekte einer natürlichen Person.</li>
+      <li><strong>f) Pseudonymisierung:</strong> Verarbeitung personenbezogener Daten in einer Weise, dass die Daten ohne Hinzuziehung zusätzlicher Informationen nicht mehr einer spezifischen Person zugeordnet werden können.</li>
+      <li><strong>g) Verantwortlicher:</strong> Natürliche oder juristische Person, die allein oder gemeinsam mit anderen über Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet.</li>
+      <li><strong>h) Auftragsverarbeiter:</strong> Natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet.</li>
+      <li><strong>i) Empfänger:</strong> Natürliche oder juristische Person, der personenbezogene Daten offengelegt werden.</li>
+      <li><strong>j) Dritter:</strong> Jede Person außer der betroffenen Person, dem Verantwortlichen, dem Auftragsverarbeiter und den direkt befugten Personen.</li>
+      <li><strong>k) Einwilligung:</strong> Freiwillig für den bestimmten Fall in informierter Weise und unmissverständlich abgegebene Willensbekundung der betroffenen Person.</li>
+    </ul>
+
+    <h2>2. Name und Anschrift des Verantwortlichen</h2>
+    <p>UKF – Unser kleines Fahrgeschäft<br>Homberger Straße 17<br>40882 Ratingen<br>Tel.: +49 2102 95 30 71 5<br>E-Mail: service@ukf-ratingen.com<br>Website: www.ukf-ratingen.de</p>
+
+    <h2>3. Erfassung von allgemeinen Daten und Informationen</h2>
+    <p>Die Internetseite der UKF – Unser kleines Fahrgeschäft erfasst mit jedem Aufruf durch eine betroffene Person oder ein automatisiertes System eine Reihe von allgemeinen Daten und Informationen. Diese allgemeinen Daten und Informationen werden in den Logfiles des Servers gespeichert. Erfasst werden können die (1) verwendeten Browsertypen und Versionen, (2) das vom zugreifenden System verwendete Betriebssystem, (3) die Internetseite, von welcher ein zugreifendes System auf unsere Internetseite gelangt (Referrer), (4) die Unterwebseiten, (5) das Datum und die Uhrzeit eines Zugriffs, (6) eine Internet-Protokoll-Adresse (IP-Adresse), (7) der Internet-Service-Provider und (8) sonstige ähnliche Daten zur Gefahrenabwehr. Diese anonymen Daten werden getrennt von allen durch eine betroffene Person angegebenen personenbezogenen Daten gespeichert.</p>
+
+    <h2>4. Routinemäßige Löschung und Sperrung von personenbezogenen Daten</h2>
+    <p>Der für die Verarbeitung Verantwortliche verarbeitet und speichert personenbezogene Daten der betroffenen Person nur für den Zeitraum, der zur Erreichung des Speicherungszwecks erforderlich ist oder sofern dies durch gesetzliche Vorschriften vorgesehen wurde. Entfällt der Speicherungszweck oder läuft eine vorgeschriebene Speicherfrist ab, werden die personenbezogenen Daten routinemäßig und entsprechend den gesetzlichen Vorschriften gesperrt oder gelöscht.</p>
+
+    <h2>5. Rechte der betroffenen Person</h2>
+    <ul>
+      <li><strong>a) Recht auf Bestätigung:</strong> Jede betroffene Person hat das Recht, vom Verantwortlichen eine Bestätigung darüber zu verlangen, ob sie betreffende personenbezogene Daten verarbeitet werden.</li>
+      <li><strong>b) Recht auf Auskunft (Art. 15 DS-GVO):</strong> Unentgeltliche Auskunft über die zu ihrer Person gespeicherten personenbezogenen Daten sowie eine Kopie dieser Auskunft.</li>
+      <li><strong>c) Recht auf Berichtigung (Art. 16 DS-GVO):</strong> Unverzügliche Berichtigung sie betreffender unrichtiger personenbezogener Daten.</li>
+      <li><strong>d) Recht auf Löschung – Recht auf Vergessen werden (Art. 17 DS-GVO):</strong> Unverzügliche Löschung, sofern die Daten für den ursprünglichen Zweck nicht mehr erforderlich sind, die Einwilligung widerrufen wurde oder die Verarbeitung unrechtmäßig war.</li>
+      <li><strong>e) Recht auf Einschränkung der Verarbeitung (Art. 18 DS-GVO):</strong> Einschränkung der Verarbeitung unter bestimmten Voraussetzungen, z. B. wenn die Richtigkeit der Daten bestritten wird.</li>
+      <li><strong>f) Recht auf Datenübertragbarkeit (Art. 20 DS-GVO):</strong> Erhalt der bereitgestellten personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format sowie das Recht, diese an einen anderen Verantwortlichen zu übermitteln.</li>
+      <li><strong>g) Recht auf Widerspruch (Art. 21 DS-GVO):</strong> Widerspruch gegen die Verarbeitung aus Gründen, die sich aus der besonderen Situation der betroffenen Person ergeben. Die UKF – Unser kleines Fahrgeschäft verarbeitet die personenbezogenen Daten dann nicht mehr, es sei denn, es liegen zwingende schutzwürdige Gründe für die Verarbeitung vor.</li>
+      <li><strong>h) Automatisierte Entscheidungen einschließlich Profiling (Art. 22 DS-GVO):</strong> Recht, nicht einer ausschließlich auf automatisierter Verarbeitung beruhenden Entscheidung unterworfen zu werden, die rechtliche Wirkung entfaltet.</li>
+      <li><strong>i) Recht auf Widerruf einer datenschutzrechtlichen Einwilligung:</strong> Jede betroffene Person hat das Recht, eine Einwilligung zur Verarbeitung personenbezogener Daten jederzeit zu widerrufen.</li>
+    </ul>
+    <p>Zur Ausübung dieser Rechte wenden Sie sich an: <a href="mailto:service@ukf-ratingen.com">service@ukf-ratingen.com</a></p>
+
+    <h2>6. Rechtsgrundlage der Verarbeitung</h2>
+    <p>Art. 6 I lit. a DS-GVO (Einwilligung), Art. 6 I lit. b DS-GVO (Vertragserfüllung/-anbahnung), Art. 6 I lit. c DS-GVO (gesetzliche Verpflichtung), Art. 6 I lit. d DS-GVO (lebenswichtige Interessen) sowie Art. 6 I lit. f DS-GVO (berechtigte Interessen) dienen als Rechtsgrundlagen für unsere Verarbeitungsvorgänge.</p>
+
+    <h2>7. Berechtigte Interessen an der Verarbeitung</h2>
+    <p>Basiert die Verarbeitung personenbezogener Daten auf Artikel 6 I lit. f DS-GVO ist unser berechtigtes Interesse die Durchführung unserer Geschäftstätigkeit zugunsten des Wohlergehens all unserer Kunden und Mitarbeiter.</p>
+
+    <h2>8. Dauer der Speicherung von personenbezogenen Daten</h2>
+    <p>Das Kriterium für die Dauer der Speicherung ist die jeweilige gesetzliche Aufbewahrungsfrist. Nach Ablauf der Frist werden die entsprechenden Daten routinemäßig gelöscht, sofern sie nicht mehr zur Vertragserfüllung oder Vertragsanbahnung erforderlich sind.</p>
+
+    <h2>9. Gesetzliche oder vertragliche Vorschriften zur Bereitstellung der personenbezogenen Daten</h2>
+    <p>Wir klären Sie darüber auf, dass die Bereitstellung personenbezogener Daten zum Teil gesetzlich vorgeschrieben ist (z. B. Steuervorschriften) oder sich aus vertraglichen Regelungen ergeben kann. Mitunter kann es zu einem Vertragsschluss erforderlich sein, dass eine betroffene Person uns personenbezogene Daten zur Verfügung stellt. Die betroffene Person kann sich jederzeit an uns wenden, um zu erfahren, ob eine Verpflichtung zur Bereitstellung der personenbezogenen Daten besteht und welche Folgen die Nichtbereitstellung hätte.</p>
+
+    <h2>10. Bestehen einer automatisierten Entscheidungsfindung</h2>
+    <p>Als verantwortungsbewusstes Unternehmen verzichten wir auf eine automatische Entscheidungsfindung oder ein Profiling.</p>
+
+    <h2>Kontaktformular</h2>
+    <p>Wenn Sie unser Kontaktformular nutzen, werden die von Ihnen eingegebenen Daten (Name, Kontaktdaten, ggf. Reisewunsch und Nachricht) zum Zweck der Bearbeitung Ihrer Anfrage und für eventuelle Anschlussfragen verarbeitet. Die technische Übermittlung erfolgt über den Dienst Web3Forms (Anbieter: Web3Forms / Astütch LLC, USA), der die Formulardaten ausschließlich zur Zustellung an unsere E-Mail-Adresse verarbeitet und nach Angaben des Anbieters nicht dauerhaft speichert. Dabei werden die Daten an Server in den USA übertragen; es handelt sich um eine Datenübermittlung in ein Drittland. Über die hierfür eingesetzten Schutzmaßnahmen informiert die Datenschutzerklärung des Anbieters. Rechtsgrundlage der Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer funktionierenden Kontaktmöglichkeit). Zum Schutz vor automatisierten Einsendungen setzen wir ein technisches Honeypot-Verfahren ein, bei dem keine zusätzlichen personenbezogenen Daten verarbeitet werden. Weitere Informationen: <a href="https://web3forms.com/privacy" target="_blank" rel="noopener">web3forms.com/privacy</a></p>
+
+    <h2>Schriftarten und Icons (lokal gehostet)</h2>
+    <p>Schriftarten (Playfair Display, Lato) und Icons (Font Awesome) werden ausschließlich lokal auf unserem eigenen Server gespeichert und ausgeliefert. Beim Aufruf der Seite wird keine Verbindung zu Servern Dritter (z. B. Google Fonts oder Content Delivery Networks) aufgebaut; es werden keine personenbezogenen Daten wie Ihre IP-Adresse an externe Anbieter übermittelt.</p>
+
+    <p class="source-note">(Diese Datenschutzerklärung wurde durch den Datenschutzerklärungsgenerator der DGD Deutsche Gesellschaft für Datenschutz GmbH, Externer Datenschutzbeauftragter Kaufbeuren, in Kooperation mit dem Anwalt für Datenschutz Christian Solmecke erstellt.)</p>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <div class="footer-logo-mark">
+            <svg viewBox="0 0 24 24" stroke="white" stroke-width="1.8" stroke-linecap="round">
+              <path d="M3 17 C7 17 9 7 12 7 C15 7 17 17 21 17"/>
+              <circle cx="12" cy="7" r="1.5" fill="white" stroke="none"/>
+            </svg>
+          </div>
+          <span class="footer-logo-text">UKF Ratingen</span>
+        </div>
+        <p>Individuelle Busreisen durch Europa mit Andreas Teschner. Ihr Weg, Ihr Tempo, Ihre Erinnerungen.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <a href="index.html#schritte">Wie es funktioniert</a>
+        <a href="index.html#reisen">Reiseideen</a>
+        <a href="index.html#andreas">Über Andreas</a>
+        <a href="index.html#kontakt">Erstgespräch vereinbaren</a>
+      </div>
+      <div class="footer-col">
+        <h5>Kontakt &amp; Recht</h5>
+        <a href="tel:+4921029530715">+49 2102 95 30 71 5</a>
+        <a href="mailto:service@ukf-ratingen.com">service@ukf-ratingen.com</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 UKF-Ratingen · Andreas Teschner</span>
+      <div class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

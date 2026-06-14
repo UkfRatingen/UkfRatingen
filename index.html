@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UKF-Ratingen | Individuelle Busreisen durch Europa – Andreas Teschner</title>
+  <meta name="description" content="Individuelle Busreisen durch Europa mit Andreas Teschner. Kein Fahrplan, kein Reisebus – Ihr Weg, Ihr Tempo. Frankreich, Portugal und mehr. Jetzt Erstgespräch vereinbaren."/>
+  <meta name="keywords" content="individuelle Busreise Europa, Privatreise Bus, Reisebegleiter Ratingen, Frankreich Nationalstraßen, Portugal Busreise, UKF Ratingen, Fahrdienst Ratingen"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://ukf-ratingen.com/"/>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"LocalBusiness",
+    "name":"UKF-Ratingen – Individuelle Busreisen",
+    "description":"Individuelle Reiseerlebnisse mit dem Bus durch Europa. Kein fester Fahrplan – Sie entscheiden wohin, wo Sie verweilen und was Sie entdecken.",
+    "url":"https://ukf-ratingen.com","telephone":"+4921029530715",
+    "email":"service@ukf-ratingen.com",
+    "founder":{"@type":"Person","name":"Andreas Teschner"},
+    "address":{"@type":"PostalAddress","streetAddress":"Homberger Straße 17","addressLocality":"Ratingen","postalCode":"40882","addressCountry":"DE"},
+    "serviceType":["Individuelle Busreisen","Europareisen","Fahrdienst Ratingen","Rollstuhltransfer"]
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="stylesheet" href="assets/fonts/fonts.css"/>
+  <link rel="stylesheet" href="assets/fa/css/fontawesome.min.css"/>
+  <link rel="stylesheet" href="assets/fa/css/solid.min.css"/>
+
+  <style>
+    :root {
+      --forest:   #1a3d2b;
+      --forest-2: #254d38;
+      --green:    #2d6a4f;
+      --green-lt: #40916c;
+      --gold:     #b5893a;
+      --gold-lt:  #d4a853;
+      --cream:    #f8f4ed;
+      --warm-off: #f0ebe0;
+      --white:    #ffffff;
+      --border:   #ddd5c5;
+      --muted:    #7a6e5f;
+      --text:     #1e1a14;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--forest);
+      color: var(--text);
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    /* ── PAGE WRAPPER ── */
+    .page-wrapper {
+      max-width: 1400px; margin: 0 auto;
+      background: var(--cream);
+      border-radius: 20px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.55);
+      padding-top: 70px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 5%;
+      background: rgba(248,244,237,0.97);
+      backdrop-filter: blur(14px);
+      position: sticky; top: 0; z-index: 200;
+      border-bottom: 1px solid var(--border);
+      border-radius: 20px 20px 0 0;
+      transition: transform .3s ease-in-out, border-radius .3s, background .3s;
+    }
+    header.scrolled { border-radius: 0; background: rgba(248,244,237,1); }
+    header.hidden { transform: translateY(-100%); }
+
+    /* UKF Logo mark */
+    .logo {
+      display: flex; align-items: center; gap: 0.7rem;
+      text-decoration: none;
+    }
+    .logo-mark {
+      width: 38px; height: 38px; border-radius: 8px;
+      background: var(--forest);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-mark svg { width: 22px; height: 22px; fill: none; }
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--forest); line-height: 1.1;
+      letter-spacing: 0.01em;
+    }
+    .logo-sub {
+      font-size: 0.65rem; font-weight: 400;
+      color: var(--muted); letter-spacing: 0.08em;
+      text-transform: uppercase; display: block;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 0.15rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.86rem; font-weight: 400; color: var(--muted);
+      padding: 0.45rem 0.85rem; border-radius: 6px;
+      text-decoration: none; transition: all .2s;
+    }
+    .nav-links a:hover { color: var(--forest); background: var(--warm-off); }
+    .nav-cta {
+      background: var(--forest) !important; color: rgba(255,255,255,0.9) !important;
+      font-weight: 600 !important; border-radius: 6px !important; margin-left: 0.4rem;
+    }
+    .nav-cta:hover { background: var(--green) !important; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+    .hamburger span { width: 22px; height: 1.5px; background: var(--forest); display: block; }
+
+    .mobile-nav {
+      display: none; flex-direction: column;
+      position: fixed; top: 62px; left: 0; right: 0;
+      background: var(--cream); border-bottom: 1px solid var(--border);
+      padding: 1rem 5%; gap: 0.2rem;
+      max-height: calc(100vh - 62px); overflow-y: auto;
+      z-index: 190;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { text-decoration: none; color: var(--text); font-size: 1rem; padding: 0.75rem 1rem; border-radius: 8px; transition: background .15s; }
+    .mobile-nav a:hover { background: var(--warm-off); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; overflow: hidden;
+      min-height: 90vh; display: flex; align-items: flex-end;
+    }
+    .hero-media {
+      position: absolute; inset: 0;
+      /* comfortable European road travel, not camping */
+      background: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=85&w=1800') center/cover no-repeat;
+    }
+    .hero-media::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,61,43,0.92) 0%, rgba(26,61,43,0.5) 45%, rgba(26,61,43,0.12) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 0 7% 6rem; max-width: 740px;
+    }
+    .hero-kicker {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold-lt); margin-bottom: 1.5rem;
+    }
+    .hero-kicker::before { content:''; width: 30px; height: 1px; background: var(--gold-lt); }
+    .hero-headline {
+      display: flex; align-items: flex-start; gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.4rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      font-weight: 400; color: var(--white);
+      line-height: 1.1;
+      margin: 0;
+      max-width: 46rem;
+    }
+    .hero h1 em { font-style: italic; color: rgba(255,255,255,0.5); }
+    .hero-quote {
+      max-width: 320px;
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      border-left: 2px solid rgba(255,255,255,0.55);
+      padding-left: 1.1rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+    .hero-quote span {
+      display: block;
+      margin-top: 0.85rem;
+      font-size: 0.84rem;
+      font-style: normal;
+      color: rgba(255,255,255,0.55);
+    }
+    .hero-desc {
+      font-size: 1.05rem; color: rgba(255,255,255,0.7);
+      line-height: 1.85; margin-bottom: 2.5rem;
+      font-weight: 300; max-width: 520px;
+    }
+    @media (max-width: 850px) {
+      .hero-headline { flex-direction: column; }
+      .hero-quote { max-width: 100%; }
+    }
+    .hero-note {
+      font-size: 0.82rem; color: rgba(255,255,255,0.45);
+      margin-bottom: 2rem; font-style: italic;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* Buttons */
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--gold); color: var(--forest);
+      padding: 0.9rem 2rem; border-radius: 6px;
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em;
+      text-transform: uppercase; text-decoration: none;
+      transition: all .22s; border: 2px solid var(--gold);
+    }
+    .btn-gold:hover { background: var(--gold-lt); border-color: var(--gold-lt); }
+    .btn-outline-w {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: rgba(255,255,255,0.85);
+      padding: 0.9rem 2rem; border-radius: 6px;
+      font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em;
+      text-transform: uppercase; text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.35); transition: all .22s;
+    }
+    .btn-outline-w:hover { border-color: var(--white); color: var(--white); }
+    .btn-forest {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--forest); color: rgba(255,255,255,0.9);
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      font-size: 0.84rem; font-weight: 700; letter-spacing: 0.05em;
+      text-transform: uppercase; text-decoration: none;
+      border: 2px solid var(--forest); transition: all .22s;
+      cursor: pointer; font-family: 'Lato', sans-serif;
+    }
+    .btn-forest:hover { background: var(--green); border-color: var(--green); }
+    .btn-outline-d {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: var(--forest);
+      padding: 0.85rem 1.8rem; border-radius: 6px;
+      font-size: 0.84rem; font-weight: 600; letter-spacing: 0.05em;
+      text-transform: uppercase; text-decoration: none;
+      border: 2px solid var(--border); transition: all .22s;
+    }
+    .btn-outline-d:hover { border-color: var(--forest); }
+
+    /* ── STRIPS / DIVIDERS ── */
+    .green-strip {
+      background: var(--forest);
+      padding: 2.8rem 5%;
+    }
+    .green-strip-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: rgba(255,255,255,0.08);
+    }
+    .gstrip-item {
+      background: var(--forest); padding: 2.2rem 2rem; text-align: center;
+    }
+    .gstrip-item i { font-size: 1.3rem; color: var(--gold-lt); margin-bottom: 0.8rem; display: block; }
+    .gstrip-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 400; color: var(--white); margin-bottom: 0.4rem;
+    }
+    .gstrip-item p { font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.65; }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 5%; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .kicker {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--green-lt);
+      display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.9rem;
+    }
+    .kicker::before { content:''; width: 26px; height: 1px; background: var(--green-lt); }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400; color: var(--forest);
+      line-height: 1.2; margin-bottom: 1rem;
+    }
+    h2 em { font-style: italic; color: var(--green-lt); }
+    .lead { font-size: 1rem; color: var(--muted); line-height: 1.85; max-width: 560px; font-weight: 300; }
+
+    /* ── 3-SCHRITTE (Gemini #3) ── */
+    #schritte { background: var(--cream); }
+    .schritte-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); margin-top: 3.5rem;
+    }
+    .schritt {
+      background: var(--white); padding: 2.8rem 2.2rem;
+      transition: background .25s;
+    }
+    .schritt:hover { background: var(--forest); }
+    .schritt:hover .schritt-num,
+    .schritt:hover h3,
+    .schritt:hover p { color: var(--white) !important; }
+    .schritt:hover .schritt-num { opacity: 0.5; }
+    .schritt-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; font-weight: 400; color: var(--border);
+      line-height: 1; margin-bottom: 1rem; display: block;
+    }
+    .schritt h3 { font-size: 1rem; font-weight: 700; color: var(--forest); margin-bottom: 0.5rem; }
+    .schritt h3 em { font-style: italic; color: var(--green-lt); font-weight: 400; }
+    .schritt p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── REISEIDEEN ── */
+    #reisen { background: var(--warm-off); }
+    .reisen-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem; margin-top: 3.5rem;
+    }
+    .reise-card {
+      border-radius: 6px; overflow: hidden;
+      background: var(--white); transition: transform .3s, box-shadow .3s;
+    }
+    .reise-card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(26,61,43,0.12); }
+    .reise-img {
+      height: 200px; background-size: cover; background-position: center;
+      position: relative;
+    }
+    .reise-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,61,43,0.55), transparent 55%);
+    }
+    .reise-flag {
+      position: absolute; bottom: 1rem; left: 1.2rem; z-index: 1;
+      font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--gold-lt);
+    }
+    .reise-body { padding: 1.5rem 1.5rem 1.8rem; }
+    .reise-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 400; color: var(--forest);
+      margin-bottom: 0.5rem; line-height: 1.3;
+    }
+    .reise-body p { font-size: 0.84rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── ÜBER ANDREAS (Gemini #5) ── */
+    #andreas { background: var(--forest); }
+    #andreas h2 { color: var(--white); }
+    #andreas h2 em { color: var(--gold-lt); }
+    #andreas .kicker { color: var(--gold-lt); }
+    #andreas .kicker::before { background: var(--gold-lt); }
+    .andreas-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: start; margin-top: 3.5rem;
+    }
+    .andreas-photo-wrap { position: relative; }
+    .andreas-photo {
+      border-radius: 6px; overflow: hidden; aspect-ratio: 4/3;
+      background: url('./andreas-teschner.jpg') left center/cover no-repeat;
+    }
+    .photo-caption {
+      position: absolute; bottom: -1px; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(26,61,43,0.95), transparent);
+      padding: 2rem 1.5rem 1.2rem;
+      border-radius: 0 0 6px 6px;
+    }
+    .photo-caption strong { display: block; font-size: 1rem; font-weight: 700; color: var(--white); }
+    .photo-caption span { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+    .andreas-content { }
+    #andreas .lead { color: rgba(255,255,255,0.55); margin-bottom: 2rem; }
+    .quote-block {
+      padding: 1.8rem 2rem 1.8rem 2rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(181,137,58,0.08);
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 2rem;
+    }
+    .quote-block p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-style: italic;
+      color: rgba(255,255,255,0.85); line-height: 1.75;
+    }
+    .quote-block cite {
+      display: block; margin-top: 0.7rem;
+      font-size: 0.75rem; color: var(--gold-lt);
+      font-style: normal; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+
+    /* ── REISEBERICHT ── */
+    #reisebericht { 
+      background: var(--warm-off);
+      background-image: url('https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=1200&q=80&fit=crop');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+      overflow: hidden;
+    }
+    #reisebericht::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(248,244,237,0.85) 0%, rgba(248,244,237,0.6) 50%, rgba(248,244,237,0.3) 100%);
+      z-index: 1;
+    }
+    #reisebericht .container {
+      position: relative;
+      z-index: 2;
+    }
+    .reisebericht-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1.5rem; margin-top: 2rem;
+    }
+    .reisebericht-grid article {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    }
+    .reisebericht-grid h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; color: var(--forest);
+      margin-bottom: 0.8rem; line-height: 1.3;
+    }
+    .reisebericht-grid p { font-size: 0.92rem; color: var(--muted); line-height: 1.8; }
+    @media (max-width: 900px) { .reisebericht-grid { grid-template-columns: 1fr; } }
+
+    .facts-table { display: flex; flex-direction: column; }
+    .fact-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .fact-row:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+    .fact-row dt { font-size: 0.82rem; color: rgba(255,255,255,0.38); }
+    .fact-row dd { font-size: 0.88rem; color: var(--white); font-weight: 600; }
+
+    /* ── KONTAKT (Gemini #2) ── */
+    #kontakt { background: var(--cream); }
+    .kontakt-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: start; margin-top: 3.5rem;
+    }
+    .kontakt-left { }
+    .kontakt-info { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 2.5rem; }
+    .ki-item { }
+    .ki-label {
+      font-size: 0.67rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--green-lt); margin-bottom: 0.4rem;
+    }
+    .ki-item a, .ki-item span {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 400; color: var(--forest);
+      text-decoration: none; display: block; transition: color .2s;
+    }
+    .ki-item a:hover { color: var(--green-lt); }
+    .ki-item small { font-size: 0.8rem; color: var(--muted); display: block; margin-top: 0.15rem; }
+    .contact-promise {
+      background: var(--forest); border-radius: 8px;
+      padding: 1.5rem 1.8rem;
+    }
+    .contact-promise p {
+      font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.75;
+    }
+    .contact-promise strong { color: var(--gold-lt); }
+
+    /* Form (Gemini #2) */
+    .kontakt-form { }
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 400; color: var(--forest);
+      margin-bottom: 0.4rem;
+    }
+    .form-sub { font-size: 0.88rem; color: var(--muted); margin-bottom: 2rem; line-height: 1.65; }
+    .fg { margin-bottom: 1.2rem; }
+    .fg label {
+      display: block; font-size: 0.67rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 0.45rem;
+    }
+    .fg input, .fg select, .fg textarea {
+      width: 100%; padding: 0.8rem 0;
+      border: none; border-bottom: 1.5px solid var(--border);
+      background: transparent; font-family: 'Lato', sans-serif;
+      font-size: 0.95rem; color: var(--text);
+      outline: none; transition: border-color .2s; -webkit-appearance: none;
+    }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--green-lt); }
+    .fg textarea { height: 90px; resize: none; }
+    .fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+    /* ── TAXI ERHALT (Gemini #4) ── */
+    .taxi-block {
+      background: var(--forest-2);
+      padding: 2rem 5%;
+    }
+    .taxi-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 2rem; flex-wrap: wrap;
+    }
+    .taxi-inner p {
+      font-size: 0.92rem; color: rgba(255,255,255,0.6); line-height: 1.7;
+    }
+    .taxi-inner strong { color: rgba(255,255,255,0.9); }
+    .taxi-links { display: flex; gap: 0.8rem; flex-wrap: wrap; flex-shrink: 0; }
+    .taxi-link {
+      font-size: 0.8rem; font-weight: 600; color: var(--gold-lt);
+      text-decoration: none; padding: 0.5rem 1rem;
+      border: 1px solid rgba(181,137,58,0.3); border-radius: 4px;
+      transition: all .2s; white-space: nowrap;
+    }
+    .taxi-link:hover { background: rgba(181,137,58,0.1); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--forest);
+      border-radius: 0 0 20px 20px;
+      padding: 3.5rem 5% 2rem;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 3rem; padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .footer-brand { }
+    .footer-logo-wrap {
+      display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem;
+    }
+    .footer-logo-mark {
+      width: 34px; height: 34px; border-radius: 7px;
+      background: rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .footer-logo-mark svg { width: 18px; height: 18px; fill: none; }
+    .footer-logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; color: var(--white); font-weight: 700;
+    }
+    .footer-brand p { font-size: 0.82rem; color: rgba(255,255,255,0.38); line-height: 1.8; max-width: 260px; }
+    .footer-col h5 {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.14em; color: rgba(255,255,255,0.28); margin-bottom: 1.2rem;
+    }
+    .footer-col a {
+      display: block; font-size: 0.83rem; color: rgba(255,255,255,0.5);
+      text-decoration: none; margin-bottom: 0.6rem; transition: color .2s;
+    }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom {
+      max-width: 1100px; margin: 0 auto; padding-top: 1.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.72rem; color: rgba(255,255,255,0.2); flex-wrap: wrap; gap: 0.5rem;
+    }
+    .footer-legal { display: flex; gap: 1.5rem; }
+    .footer-legal a { color: rgba(255,255,255,0.3); text-decoration: none; font-size: 0.72rem; transition: color .15s; }
+    .footer-legal a:hover { color: rgba(255,255,255,0.6); }
+
+    /* ── ERFAHRUNG TIMELINE ── */
+    .tl-section { background: var(--forest); }
+    .tl-phases {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0; margin-top: 3.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .tl-phase {
+      padding: 2.5rem 2rem;
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+    .tl-phase:last-child { border-right: none; }
+    .tl-phase-label {
+      font-size: 0.67rem; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--gold-lt);
+      margin-bottom: 1.8rem; display: block;
+    }
+    .tl-item { margin-bottom: 1.4rem; }
+    .tl-item-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700; color: var(--white);
+      line-height: 1; margin-bottom: 0.3rem;
+    }
+    .tl-item-text { font-size: 0.78rem; color: rgba(255,255,255,0.42); line-height: 1.65; }
+    .tl-badge {
+      display: inline-block; font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      background: rgba(181,137,58,0.15); color: var(--gold-lt);
+      padding: 0.2rem 0.55rem; border-radius: 3px; margin-bottom: 0.4rem;
+    }
+    @media(max-width:960px) { .tl-phases { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:600px) { .tl-phases { grid-template-columns: 1fr; } }
+
+    /* ── MODALS ── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(26,61,43,0.75); backdrop-filter: blur(6px);
+      overflow-y: auto; padding: 2rem;
+    }
+    .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+    .modal-box {
+      background: var(--cream); border-radius: 12px;
+      max-width: 760px; width: 100%; margin: 2rem auto;
+      padding: 3rem; position: relative;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.45);
+    }
+    .modal-close {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      background: none; border: none; cursor: pointer;
+      font-size: 1.1rem; color: var(--muted); transition: color .2s; padding: 0.4rem;
+    }
+    .modal-close:hover { color: var(--forest); }
+    .modal-box h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 1.8rem; }
+    .modal-box h3 {
+      font-family: 'Playfair Display', serif; font-size: 1rem;
+      color: var(--forest); margin: 1.8rem 0 0.5rem; font-weight: 700;
+    }
+    .modal-box p { font-size: 0.88rem; color: var(--muted); line-height: 1.85; margin-bottom: 0.8rem; }
+    .modal-box ul { padding-left: 1.3rem; margin-bottom: 0.8rem; }
+    .modal-box li { font-size: 0.88rem; color: var(--muted); line-height: 1.85; }
+    @media(max-width:600px) { .modal-box { padding: 2rem 1.5rem; } }
+
+    /* Reveal */
+    .r { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .r.in { opacity: 1; transform: none; }
+    .r1 { transition-delay: .1s; }
+    .r2 { transition-delay: .2s; }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width: 960px) {
+      body { padding: 0; }
+      .page-wrapper { border-radius: 0; box-shadow: none; padding-top: 62px; }
+      header { border-radius: 0; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .green-strip-inner, .schritte-grid { grid-template-columns: 1fr; }
+      .reisen-grid { grid-template-columns: 1fr; }
+      .andreas-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .kontakt-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .fg-row { grid-template-columns: 1fr; }
+      .taxi-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- HEADER -->
+  <header id="mainHeader">
+    <a class="logo" href="#hero">
+      <div class="logo-mark">
+        <!-- UKF road/route icon -->
+        <svg viewBox="0 0 24 24" stroke="white" stroke-width="1.8" stroke-linecap="round">
+          <path d="M3 17 C7 17 9 7 12 7 C15 7 17 17 21 17"/>
+          <circle cx="12" cy="7" r="1.5" fill="white" stroke="none"/>
+        </svg>
+      </div>
+      <div>
+        <span class="logo-text">UKF Ratingen</span>
+        <span class="logo-sub">Individuelle Busreisen</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#schritte">Wie es geht</a></li>
+      <li><a href="#reisen">Reiseideen</a></li>
+      <li><a href="#andreas">Andreas</a></li>
+      <li><a href="#reisebericht">Reisebericht</a></li>
+      <li><a href="#erfahrung">Erfahrung</a></li>
+      <li><a href="#kontakt" class="nav-cta">Erstgespräch vereinbaren</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menü" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#schritte" onclick="closeNav()">Wie es funktioniert</a>
+    <a href="#reisen" onclick="closeNav()">Reiseideen</a>
+    <a href="#andreas" onclick="closeNav()">Über Andreas</a>
+    <a href="#reisebericht" onclick="closeNav()">Reisebericht</a>
+    <a href="#erfahrung" onclick="closeNav()">Erfahrung</a>
+    <a href="#kontakt" onclick="closeNav()" style="color:var(--green-lt); font-weight:700;">Erstgespräch vereinbaren</a>
+    <a href="tel:+4921029530715" style="color:var(--gold); font-weight:700;"><i class="fas fa-phone"></i> +49 2102 95 30 71 5</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-media"></div>
+    <div class="hero-content">
+      <div class="hero-kicker">Individuelle Busreisen · Europa</div>
+      <div class="hero-headline">
+        <h1>Ihr Weg.<br>Ihr Tempo.<br><em>Ihre Erinnerungen.</em></h1>
+        <blockquote class="hero-quote">
+          „Die Weisheit aller Weisen galt mir Reisen, reisen, reisen.“
+          <span>- Theodor Fontane</span>
+        </blockquote>
+      </div>
+      <p class="hero-desc">Kein Reisebus, kein Fahrplan. Mit Andreas Teschner entdecken Sie Europa so, wie es sein soll – langsam, intensiv und ganz nach Ihren Wünschen.</p>
+      <!-- Gemini #1: Klarstellung zum Übernachtungsmodell -->
+      <p class="hero-note">Wir fahren bequem in meinem VW-T5 Bus, und Sie übernachten in den Unterkünften Ihrer Wahl.</p>
+      <div class="hero-actions">
+        <!-- Gemini #2: CTA persönlicher -->
+        <a href="#kontakt" class="btn-gold"><i class="fas fa-phone"></i> Kostenloses Erstgespräch</a>
+        <a href="#schritte" class="btn-outline-w">Wie es funktioniert</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP -->
+  <div class="green-strip">
+    <div class="green-strip-inner">
+      <div class="gstrip-item r">
+        <i class="fas fa-route"></i>
+        <h3>Ihr eigener Weg</h3>
+        <p>Kein fester Fahrplan. Sie entscheiden wohin, ob Sie einen Tag oder gleich eine ganze Woche bleiben.</p>
+      </div>
+      <div class="gstrip-item r r1">
+        <i class="fas fa-map-signs"></i>
+        <h3>Nationalstraßen statt Autobahn</h3>
+        <p>Dörfer, Märkte, Landschaften – die Eindrücke, die man sonst einfach durchrast.</p>
+      </div>
+      <div class="gstrip-item r r2">
+        <i class="fas fa-user-tie"></i>
+        <h3>Sie buchen Andreas</h3>
+        <p>Nicht nur einen Bus – einen echten Reisebegleiter, der den Weg kennt und liebt.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 SCHRITTE (Gemini #3) -->
+  <section id="schritte">
+    <div class="container">
+      <div class="r">
+        <div class="kicker">Der Ablauf</div>
+        <h2>In 3 Schritten zu<br><em>Ihrer Reise.</em></h2>
+        <p class="lead">So einfach ist es – damit Sie genau wissen, was passiert, wenn Sie sich bei uns melden.</p>
+      </div>
+      <div class="schritte-grid r">
+        <div class="schritt">
+          <span class="schritt-num">01</span>
+          <h3><em>Kennenlernen &amp; Träumen</em></h3>
+          <p>Wir telefonieren und besprechen Ihre Wunschländer, Ihre Vorstellungen und Ihr Tempo. Völlig unverbindlich – ich höre einfach zu.</p>
+        </div>
+        <div class="schritt">
+          <span class="schritt-num">02</span>
+          <h3><em>Routen-Skizze &amp; Angebot</em></h3>
+          <p>Ich erstelle einen lockeren Reiseplan mit Routen, die ich selbst kenne und liebe – und ein faires, transparentes Angebot dazu.</p>
+        </div>
+        <div class="schritt">
+          <span class="schritt-num">03</span>
+          <h3><em>Einsteigen &amp; Genießen</em></h3>
+          <p>Wir fahren in Ihrem Tempo los – absolute Freiheit. Unterwegs entscheiden Sie. Ich kenne mich aus und bin einfach für Sie da.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REISEIDEEN -->
+  <section id="reisen">
+    <div class="container">
+      <div class="r">
+        <div class="kicker">Inspiration</div>
+        <h2>Wohin führt<br><em>Ihr Weg?</em></h2>
+        <p class="lead">Einige Reisen, die Andreas selbst liebt. Als Inspiration – nicht als Programm.</p>
+      </div>
+      <div class="reisen-grid">
+        <div class="reise-card r">
+            <div class="reise-img" style="background-image: url(https://as1.ftcdn.net/v2/jpg/02/10/35/65/1000_F_210356525_N9S8uOq0Z9Qj9U5N6Y6G8S4v8f0D0Z5R.jpg);">
+              <span class="reise-flag">Frankreich</span>
+            </div>
+            <div class="reise-body">
+              <h3>Durch Frankreich – auf den Nationalstraßen</h3>
+              <p>Weinberge, Dörfer, Märkte. Frankreich abseits der Autobahn – die Eindrücke sind viel intensiver, wenn man langsam fährt.</p>
+            </div>
+          </div>
+        <div class="reise-card r r1">
+          <div class="reise-img" style="background-image:url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=700&q=80&fit=crop')">
+            <span class="reise-flag">Portugal</span>
+          </div>
+          <div class="reise-body">
+            <h3>Portugal entdecken</h3>
+            <p>Lissabon, die Algarve oder der Norden – Portugal hat für jeden Geschmack etwas Unvergessliches zu bieten.</p>
+          </div>
+        </div>
+        <div class="reise-card r r2">
+          <div class="reise-img" style="background-image:url('https://images.unsplash.com/photo-1473951574080-01fe45ec8643?w=700&q=80&fit=crop')">
+            <span class="reise-flag">Ihr Ziel</span>
+          </div>
+          <div class="reise-body">
+            <h3>Ihr ganz eigenes Traumziel</h3>
+            <p>Sie haben ein Ziel im Kopf, das noch niemand kennt? Genau dafür bin ich da. Erzählen Sie mir davon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÜBER ANDREAS (Gemini #5) -->
+  <section id="andreas">
+    <div class="container">
+      <div class="andreas-grid">
+        <div class="andreas-photo-wrap r">
+          <div class="andreas-photo"></div>
+          <div class="photo-caption">
+            <strong>Andreas Teschner</strong>
+            <span>Ihr Fahrer &amp; Reisebegleiter</span>
+          </div>
+        </div>
+        <div class="r r1">
+          <div class="kicker">Der Mensch dahinter</div>
+          <h2>Sie buchen nicht<br>einen Bus –<br><em>Sie buchen Andreas.</em></h2>
+          <p class="lead">Bei diesem Konzept verbringen Sie Tage oder Wochen zusammen unterwegs. Deshalb ist es wichtig, dass die Chemie stimmt. Lernen Sie mich kennen.</p>
+          <div class="quote-block">
+            <p>„Ich möchte den Menschen Erlebnisse ermöglichen und das nicht mit dem Flieger, Eisenbahn oder Reisebus, mit denen man feste Ziele anfährt, sondern mit meinem Bus, mit dem jeder seinen individuellen Wünsche nachgehen kann, nach seinen Bedürfnissen Orte besucht, wo man verweilt oder nur durchfährt, eine Übernachtung einlegt oder oder oder..."</p>
+            <cite>– Andreas Teschner, Inhaber UKF-Ratingen</cite>
+          </div>
+          <dl class="facts-table">           
+             <div class="fact-row"><dt>Fahrzeug</dt><dd>VW T5 · rollstuhlgeeignet</dd></div>
+            <div class="fact-row"><dt>Unterkunft</dt><dd>Hotels/Pensionen nach Ihrer Wahl</dd></div>
+            <div class="fact-row"><dt>Lieblingsroute</dt><dd>Frankreich, Nationalstraßen</dd></div>
+            <div class="fact-row"><dt>Erfahrung</dt><dd>Seit 1982 · Aufgewachsen im Wald </dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REISEBERICHT -->
+  <section id="reisebericht">
+    <div class="container">
+      <div class="kicker">Aktueller Reisebericht</div>
+      <h2>Portugal, Reliquias<br><em>Eine Reise ohne festen Plan.</em></h2>
+      <p class="lead">Andreas beschreibt die Ruhe auf Nebenstraßen, das Finden kleiner Orte abseits des Touristenstroms und die Freiheit, jeder Reise ihren eigenen Rhythmus zu geben.</p>
+      <p style="font-size:0.8rem; color:var(--muted); margin-bottom:2rem;">
+        <i class="fas fa-calendar-alt" style="color:var(--green-lt); margin-right:0.4rem;"></i><strong>15 Tage</strong> &nbsp;·&nbsp;
+        <i class="fas fa-map-marker-alt" style="color:var(--green-lt); margin-right:0.4rem;"></i><strong>Portugal, Reliquias</strong> &nbsp;·&nbsp;
+        <i class="fas fa-road" style="color:var(--green-lt); margin-right:0.4rem;"></i><strong>Ratingen → Ardennen → Pyrenäen → Reliquias</strong>
+      </p>
+      <div class="reisebericht-grid">
+        <article>
+          <h3>Tage 1–3: Von Ratingen nach Reliquias</h3>
+          <p>Ratingen liegt noch im Dunkeln, als der Bus losfährt. Über Aachen nach Belgien, dann die N2 durch Maubeuge Richtung Paris, weiter über Melun und Limoges nach Orthez. Am frühen Morgen des zweiten Tages führt die D933 – der Jakobsweg – über die Pyrenäen. Zwei Stunden Serpentinen, die etwas Meditatives haben. Pamplona, Logroño, Burgos, Salamanca, Cáceres, eine Herberge mit Hamburger und Camembert. Dann: Badajoz, Elvas, Évora, Beja – und schließlich Reliquias, 50 Kilometer von der Westküste entfernt.</p>
+        </article>
+        <article>
+          <h3>Tage 4–12: Reliquias – das Leben verlangsamt sich</h3>
+          <p>Schlafen, solange man möchte. Essen, wenn man Hunger hat. Frischer Fisch, Gemüse, das auch nach dem schmeckt, wonach es aussieht – Tomaten mit Queso Fresco aus Schafsmilch und Olivenöl. Ans Meer fahren, den Wellen zugucken, im Café sitzen, mit den Einheimischen bei ihrem entspannten Leben teilhaben. Das Einfache auf dem Land genießen, mit dem Ziesel über die Feldwege fahren. Neun Tage, die sich anfühlen wie eine andere Zeitzone.</p>
+        </article>
+        <article>
+          <h3>Tage 13–15: Der Rückweg gehört uns</h3>
+          <p>Mittags geht es los. Nachts kurz in Burgos schlafen. Dann: Sonnenaufgang über den Pyrenäen – magisch. Ein kleines Hotel in Montargis, leichte mediterrane Küche. Kurz vor fünf Uhr morgens, ein Croissant frisch aus dem Ofen. Weiter, bis das Bar/Tabac/Lotto-Schild leuchtet: echter Kaffee aus der alten Siebträgermaschine, Dorfbewohner, die um 7 Uhr den Tag begrüßen. Am frühen Nachmittag: Ratingen.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ERFAHRUNG TIMELINE -->
+  <section id="erfahrung" class="tl-section" style="padding: 6rem 5%;">
+    <div class="container">
+      <div class="r">
+        <div class="kicker" style="color:var(--gold-lt);">44 Jahre unterwegs</div>
+        <h2 style="color:var(--white);">Eine <em style="color:var(--gold-lt);">Lebensgeschichte</em><br>auf Rädern.</h2>
+        <p class="lead" style="color:rgba(255,255,255,0.55);">Von den ersten Kilometern 1982 bis zu jährlichen Portugal-Reisen – Andreas kennt die Straßen Europas wie kein Zweiter.</p>
+      </div>
+      <div class="tl-phases r">
+        <div class="tl-phase">
+          <span class="tl-phase-label">Die Anfänge · 1982–1991</span>
+          <div class="tl-item">
+            <span class="tl-badge">Meilenstein</span>
+            <div class="tl-item-year">1982</div>
+            <div class="tl-item-text">Führerschein Klasse 1+3</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-item-year">1983</div>
+            <div class="tl-item-text">Erster Roadtrip: Straßburg, Schlumpfmuseum, Lyon, Dijon, Paris – 5 Tage</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-item-year">1985</div>
+            <div class="tl-item-text">Athen & Peloponnes – 15 Tage</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-item-year">1986</div>
+            <div class="tl-item-text">Island & USA – 6 Wochen</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-item-year">1987</div>
+            <div class="tl-item-text">Budapest</div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-badge">Meilenstein</span>
+            <div class="tl-item-year">1988</div>
+            <div class="tl-item-text">Personenbeförderungsschein</div>
+          </div>
+        </div>
+        <div class="tl-phase">
+          <span class="tl-phase-label">Eigene Wege · 1992–2001</span>
+          <div class="tl-item">
+            <div class="tl-item-year">1992 & 1994</div>
+            <div class="tl-item-text">Erste Portugal-Reisen</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-item-year">1995</div>
+            <div class="tl-item-text">Marbella, Gipsy Kings</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-item-year">1996–1999</div>
+            <div class="tl-item-text">Popkomm, Festivals & Clubs, Wien, Budapest, Bayreuth, Toulouse</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-item-year">1997–1998</div>
+            <div class="tl-item-text">Keio Wagner Society Tokyo</div>
+          </div>
+        </div>
+        <div class="tl-phase">
+          <span class="tl-phase-label">Auf Tour · 2002–2013</span>
+          <div class="tl-item">
+            <div class="tl-item-year">2002</div>
+            <div class="tl-item-text">Drowning Pool, Europa</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-item-year">2005</div>
+            <div class="tl-item-text">Turandot: Paris, München, Gelsenkirchen</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-item-year">2007</div>
+            <div class="tl-item-text">Joe Cocker, Bukarest</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-item-year">2008</div>
+            <div class="tl-item-text">Cavalera Conspiracy, Kid Rock, Georg Benson – Italien & Schweiz</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-item-year">2011–2012</div>
+            <div class="tl-item-text">Razlog & Sofia, Bulgarien</div>
+          </div>
+        </div>
+        <div class="tl-phase">
+          <span class="tl-phase-label">Heute · 2014–2026</span>
+          <div class="tl-item">
+            <span class="tl-badge">Meilenstein</span>
+            <div class="tl-item-year">2014</div>
+            <div class="tl-item-text">Eröffnung Rollstuhlbeförderung</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-item-year">2018–2026</div>
+            <div class="tl-item-text">Jedes Jahr Portugal. Jedes Jahr anders. Jedes Jahr unvergesslich.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT (Gemini #2) -->
+  <section id="kontakt">
+    <div class="container">
+      <div class="r">
+        <div class="kicker">Lassen Sie uns sprechen</div>
+        <h2>Kostenloses<br><em>Erstgespräch vereinbaren.</em></h2>
+        <p class="lead">Eine individuelle Reise plant man nicht in einem Formular. Rufen Sie an – oder schreiben Sie mir von Ihrem Traumziel.</p>
+      </div>
+      <div class="kontakt-grid">
+        <div class="kontakt-left r">
+          <div class="kontakt-info">
+            <div class="ki-item">
+              <div class="ki-label">Telefon</div>
+              <a href="tel:+4921029530715">+49 2102 95 30 71 5</a>
+              <a href="tel:+4917733964730" style="font-size:1rem; font-weight:300; color:var(--muted);">+49 177 33 96 4 73</a>
+            </div>
+            <div class="ki-item">
+              <div class="ki-label">E-Mail</div>
+              <a href="mailto:service@ukf-ratingen.com">service@ukf-ratingen.com</a>
+            </div>
+          </div>
+          <div class="contact-promise">
+            <p>Bei solchen Reisen wollen Sie mich erst kennenlernen – das verstehe ich. <strong>Rufen Sie einfach an.</strong> Kein Druck, kein Angebot ohne Ihr Einverständnis. Wir reden einfach.</p>
+          </div>
+          <a href="tel:+4921029530715" class="btn-forest" style="margin-top:1.5rem; align-self:flex-start;">
+            <i class="fas fa-phone"></i> Jetzt anrufen
+          </a>
+        </div>
+        <div class="r r1">
+          <div class="form-title">Erzählen Sie mir von Ihrem Traumziel.</div>
+          <p class="form-sub">Kein Stress, keine Verpflichtung. Einfach hinschreiben was Sie sich vorstellen – ich melde mich persönlich.</p>
+          <form id="kontaktForm" novalidate>
+            <div class="fg-row">
+              <div class="fg">
+                <label for="kName">Ihr Name</label>
+                <input id="kName" name="name" type="text" placeholder="Vor- und Nachname" autocomplete="name" required/>
+              </div>
+              <div class="fg">
+                <label for="kKontakt">Telefon oder E-Mail</label>
+                <input id="kKontakt" name="kontakt" type="text" placeholder="Wie soll ich Sie erreichen?" required/>
+              </div>
+            </div>
+            <div class="fg">
+              <label for="kZiel">Reiseidee</label>
+              <select id="kZiel" name="reiseziel">
+                <option>Frankreich – Nationalstraßen</option>
+                <option>Portugal</option>
+                <option>Spanien</option>
+                <option>Italien</option>
+                <option>Skandinavien</option>
+                <option>Noch kein konkretes Ziel – offen</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="kNachricht">Ihr Traumziel oder Wunsch</label>
+              <textarea id="kNachricht" name="nachricht" placeholder="Erzählen Sie mir was Sie sich vorstellen – ein Ziel, eine Stimmung, eine Jahreszeit, wer mitkommt…"></textarea>
+            </div>
+            <div style="position:absolute; left:-5000px;" aria-hidden="true">
+              <label>Bitte dieses Feld leer lassen<input type="checkbox" name="botcheck" id="botcheck" tabindex="-1" autocomplete="off"/></label>
+            </div>
+            <p id="kError" style="display:none; font-size:0.82rem; color:#c0392b; margin:0.4rem 0 0.6rem; padding-top:0.5rem; border-top:1px solid rgba(192,57,43,0.2);">
+              <i class="fas fa-exclamation-circle"></i> Bitte geben Sie Ihren Namen und eine Kontaktmöglichkeit an.
+            </p>
+            <div id="kSuccess" style="display:none; font-size:0.88rem; color:var(--green-lt); line-height:1.75; margin-bottom:0.8rem; padding:0.8rem 1rem; background:rgba(45,106,79,0.07); border-radius:6px; border:1px solid rgba(45,106,79,0.2);">
+              <strong><i class="fas fa-check-circle"></i> Vielen Dank – Ihre Nachricht wurde gesendet.</strong><br>
+              Andreas Teschner meldet sich persönlich bei Ihnen.
+            </div>
+            <button id="kSubmit" type="submit" class="btn-forest" style="width:100%; justify-content:center; margin-top:0.5rem;">
+              <i class="fas fa-paper-plane"></i> Nachricht absenden
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAXI ERHALT (Gemini #4) -->
+  <div class="taxi-block">
+    <div class="taxi-inner">
+      <p><strong>Weiterhin für Sie da:</strong> Klassischer Fahrdienst &amp; Rollstuhltransfer in Ratingen – für Arztfahrten, Flughafentransfers und lokale Fahrten ist UKF-Ratingen nach wie vor Ihr verlässlicher Partner.</p>
+      <div class="taxi-links">
+        <a href="tel:+4921029530715" class="taxi-link"><i class="fas fa-phone"></i> +49 2102 95 30 71 5</a>
+        <a href="mailto:service@ukf-ratingen.com" class="taxi-link"><i class="fas fa-envelope"></i> E-Mail</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <div class="footer-logo-mark">
+            <svg viewBox="0 0 24 24" stroke="white" stroke-width="1.8" stroke-linecap="round">
+              <path d="M3 17 C7 17 9 7 12 7 C15 7 17 17 21 17"/>
+              <circle cx="12" cy="7" r="1.5" fill="white" stroke="none"/>
+            </svg>
+          </div>
+          <span class="footer-logo-text">UKF Ratingen</span>
+        </div>
+        <p>Individuelle Busreisen durch Europa mit Andreas Teschner. Ihr Weg, Ihr Tempo, Ihre Erinnerungen.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <a href="#schritte">Wie es funktioniert</a>
+        <a href="#reisen">Reiseideen</a>
+        <a href="#andreas">Über Andreas</a>
+        <a href="#kontakt">Erstgespräch vereinbaren</a>
+      </div>
+      <div class="footer-col">
+        <h5>Kontakt & Recht</h5>
+        <a href="tel:+4921029530715">+49 2102 95 30 71 5</a>
+        <a href="mailto:service@ukf-ratingen.com">service@ukf-ratingen.com</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 UKF-Ratingen · Andreas Teschner </span>
+      <div class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- MODAL: IMPRESSUM -->
+  <div class="modal-overlay" id="impressumModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('impressumModal')" aria-label="Schließen"><i class="fas fa-times"></i></button>
+      <div class="kicker">Rechtliches</div>
+      <h2>Impressum</h2>
+
+      <h3>UKF-Ratingen – Unser kleines Fahrgeschäft</h3>
+      <p>Homberger Straße 17<br>40882 Ratingen</p>
+      <p>Tel.: +49 2102 95 30 71 5<br>Mobil: +49 177 33 96 4 73<br>E-Mail: service@ukf-ratingen.com</p>
+      <p>Inhaber: Andreas Teschner<br>Sitz: Ratingen<br>USt-IdNr.: DE186040873</p>
+
+      <h3>1. Haftungsbeschränkung</h3>
+      <p>Die Inhalte dieser Website werden mit größtmöglicher Sorgfalt erstellt. Der Anbieter übernimmt jedoch keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Inhalte. Die Nutzung der Inhalte der Website erfolgt auf eigene Gefahr des Nutzers. Namentlich gekennzeichnete Beiträge geben die Meinung des jeweiligen Autors und nicht immer die Meinung des Anbieters wieder. Mit der reinen Nutzung der Website des Anbieters kommt keinerlei Vertragsverhältnis zwischen dem Nutzer und dem Anbieter zustande.</p>
+
+      <h3>2. Externe Links</h3>
+      <p>Diese Website enthält Verknüpfungen zu Websites Dritter („externe Links"). Diese Websites unterliegen der Haftung der jeweiligen Betreiber. Der Anbieter hat bei der erstmaligen Verknüpfung der externen Links die fremden Inhalte daraufhin überprüft, ob etwaige Rechtsverstöße bestehen. Zu dem Zeitpunkt waren keine Rechtsverstöße ersichtlich. Der Anbieter hat keinerlei Einfluss auf die aktuelle und zukünftige Gestaltung und auf die Inhalte der verknüpften Seiten. Das Setzen von externen Links bedeutet nicht, dass sich der Anbieter die hinter dem Verweis oder Link liegenden Inhalte zu Eigen macht. Eine ständige Kontrolle der externen Links ist für den Anbieter ohne konkrete Hinweise auf Rechtsverstöße nicht zumutbar. Bei Kenntnis von Rechtsverstößen werden jedoch derartige externe Links unverzüglich gelöscht.</p>
+
+      <h3>3. Urheber- und Leistungsschutzrechte</h3>
+      <p>Die auf dieser Website veröffentlichten Inhalte unterliegen dem deutschen Urheber- und Leistungsschutzrecht. Jede vom deutschen Urheber- und Leistungsschutzrecht nicht zugelassene Verwertung bedarf der vorherigen schriftlichen Zustimmung des Anbieters oder jeweiligen Rechteinhabers. Dies gilt insbesondere für Vervielfältigung, Bearbeitung, Übersetzung, Einspeicherung, Verarbeitung bzw. Wiedergabe von Inhalten in Datenbanken oder anderen elektronischen Medien und Systemen. Inhalte und Rechte Dritter sind dabei als solche gekennzeichnet. Die unerlaubte Vervielfältigung oder Weitergabe einzelner Inhalte oder kompletter Seiten ist nicht gestattet und strafbar. Lediglich die Herstellung von Kopien und Downloads für den persönlichen, privaten und nicht kommerziellen Gebrauch ist erlaubt.</p>
+      <p>Die Darstellung dieser Website in fremden Frames ist nur mit schriftlicher Erlaubnis zulässig.</p>
+
+      <h3>5. Besondere Nutzungsbedingungen</h3>
+      <p>Soweit besondere Bedingungen für einzelne Nutzungen dieser Website von den vorgenannten Nummern 1. bis 4. abweichen, wird an entsprechender Stelle ausdrücklich darauf hingewiesen. In diesem Falle gelten im jeweiligen Einzelfall die besonderen Nutzungsbedingungen.</p>
+      <p style="font-size:0.78rem; color:var(--border); margin-top:1.5rem;">Quelle: Muster-Disclaimer von Juraforum.de in Kooperation mit Experten-Branchenbuch.de</p>
+    </div>
+  </div>
+
+  <!-- MODAL: DATENSCHUTZ -->
+  <div class="modal-overlay" id="datenschutzModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('datenschutzModal')" aria-label="Schließen"><i class="fas fa-times"></i></button>
+      <div class="kicker">Rechtliches</div>
+      <h2>Datenschutzerklärung</h2>
+
+      <p>Wir freuen uns sehr über Ihr Interesse an unserem Unternehmen. Datenschutz hat einen besonders hohen Stellenwert für die Geschäftsleitung der UKF – Unser kleines Fahrgeschäft. Eine Nutzung der Internetseiten der UKF – Unser kleines Fahrgeschäft ist grundsätzlich ohne jede Angabe personenbezogener Daten möglich. Sofern eine betroffene Person besondere Services unseres Unternehmens über unsere Internetseite in Anspruch nehmen möchte, könnte jedoch eine Verarbeitung personenbezogener Daten erforderlich werden. Ist die Verarbeitung personenbezogener Daten erforderlich und besteht für eine solche Verarbeitung keine gesetzliche Grundlage, holen wir generell eine Einwilligung der betroffenen Person ein.</p>
+      <p>Die Verarbeitung personenbezogener Daten, beispielsweise des Namens, der Anschrift, E-Mail-Adresse oder Telefonnummer einer betroffenen Person, erfolgt stets im Einklang mit der Datenschutz-Grundverordnung und in Übereinstimmung mit den für die UKF – Unser kleines Fahrgeschäft geltenden landesspezifischen Datenschutzbestimmungen. Mittels dieser Datenschutzerklärung möchte unser Unternehmen die Öffentlichkeit über Art, Umfang und Zweck der von uns erhobenen, genutzten und verarbeiteten personenbezogenen Daten informieren. Ferner werden betroffene Personen mittels dieser Datenschutzerklärung über die ihnen zustehenden Rechte aufgeklärt.</p>
+      <p>Die UKF – Unser kleines Fahrgeschäft hat als für die Verarbeitung Verantwortlicher zahlreiche technische und organisatorische Maßnahmen umgesetzt, um einen möglichst lückenlosen Schutz der über diese Internetseite verarbeiteten personenbezogenen Daten sicherzustellen. Dennoch können internetbasierte Datenübertragungen grundsätzlich Sicherheitslücken aufweisen, sodass ein absoluter Schutz nicht gewährleistet werden kann. Aus diesem Grund steht es jeder betroffenen Person frei, personenbezogene Daten auch auf alternativen Wegen, beispielsweise telefonisch, an uns zu übermitteln.</p>
+
+      <h3>1. Begriffsbestimmungen</h3>
+      <p>Die Datenschutzerklärung der UKF – Unser kleines Fahrgeschäft beruht auf den Begrifflichkeiten der Datenschutz-Grundverordnung (DS-GVO). Wir verwenden in dieser Datenschutzerklärung unter anderem die folgenden Begriffe:</p>
+      <ul>
+        <li><strong>a) Personenbezogene Daten:</strong> Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen.</li>
+        <li><strong>b) Betroffene Person:</strong> Jede identifizierte oder identifizierbare natürliche Person, deren personenbezogene Daten vom Verantwortlichen verarbeitet werden.</li>
+        <li><strong>c) Verarbeitung:</strong> Jeder Vorgang im Zusammenhang mit personenbezogenen Daten wie das Erheben, Erfassen, Speichern, Verwenden, Offenlegen oder Löschen.</li>
+        <li><strong>d) Einschränkung der Verarbeitung:</strong> Markierung gespeicherter personenbezogener Daten mit dem Ziel, ihre künftige Verarbeitung einzuschränken.</li>
+        <li><strong>e) Profiling:</strong> Automatisierte Verarbeitung personenbezogener Daten zur Bewertung bestimmter persönlicher Aspekte einer natürlichen Person.</li>
+        <li><strong>f) Pseudonymisierung:</strong> Verarbeitung personenbezogener Daten in einer Weise, dass die Daten ohne Hinzuziehung zusätzlicher Informationen nicht mehr einer spezifischen Person zugeordnet werden können.</li>
+        <li><strong>g) Verantwortlicher:</strong> Natürliche oder juristische Person, die allein oder gemeinsam mit anderen über Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet.</li>
+        <li><strong>h) Auftragsverarbeiter:</strong> Natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet.</li>
+        <li><strong>i) Empfänger:</strong> Natürliche oder juristische Person, der personenbezogene Daten offengelegt werden.</li>
+        <li><strong>j) Dritter:</strong> Jede Person außer der betroffenen Person, dem Verantwortlichen, dem Auftragsverarbeiter und den direkt befugten Personen.</li>
+        <li><strong>k) Einwilligung:</strong> Freiwillig für den bestimmten Fall in informierter Weise und unmissverständlich abgegebene Willensbekundung der betroffenen Person.</li>
+      </ul>
+
+      <h3>2. Name und Anschrift des Verantwortlichen</h3>
+      <p>UKF – Unser kleines Fahrgeschäft<br>Homberger Straße 17<br>40882 Ratingen<br>Tel.: +49 2102 95 30 71 5<br>E-Mail: service@ukf-ratingen.com<br>Website: www.ukf-ratingen.de</p>
+
+      <h3>3. Erfassung von allgemeinen Daten und Informationen</h3>
+      <p>Die Internetseite der UKF – Unser kleines Fahrgeschäft erfasst mit jedem Aufruf durch eine betroffene Person oder ein automatisiertes System eine Reihe von allgemeinen Daten und Informationen. Diese allgemeinen Daten und Informationen werden in den Logfiles des Servers gespeichert. Erfasst werden können die (1) verwendeten Browsertypen und Versionen, (2) das vom zugreifenden System verwendete Betriebssystem, (3) die Internetseite, von welcher ein zugreifendes System auf unsere Internetseite gelangt (Referrer), (4) die Unterwebseiten, (5) das Datum und die Uhrzeit eines Zugriffs, (6) eine Internet-Protokoll-Adresse (IP-Adresse), (7) der Internet-Service-Provider und (8) sonstige ähnliche Daten zur Gefahrenabwehr. Diese anonymen Daten werden getrennt von allen durch eine betroffene Person angegebenen personenbezogenen Daten gespeichert.</p>
+
+      <h3>4. Routinemäßige Löschung und Sperrung von personenbezogenen Daten</h3>
+      <p>Der für die Verarbeitung Verantwortliche verarbeitet und speichert personenbezogene Daten der betroffenen Person nur für den Zeitraum, der zur Erreichung des Speicherungszwecks erforderlich ist oder sofern dies durch gesetzliche Vorschriften vorgesehen wurde. Entfällt der Speicherungszweck oder läuft eine vorgeschriebene Speicherfrist ab, werden die personenbezogenen Daten routinemäßig und entsprechend den gesetzlichen Vorschriften gesperrt oder gelöscht.</p>
+
+      <h3>5. Rechte der betroffenen Person</h3>
+      <ul>
+        <li><strong>a) Recht auf Bestätigung:</strong> Jede betroffene Person hat das Recht, vom Verantwortlichen eine Bestätigung darüber zu verlangen, ob sie betreffende personenbezogene Daten verarbeitet werden.</li>
+        <li><strong>b) Recht auf Auskunft (Art. 15 DS-GVO):</strong> Unentgeltliche Auskunft über die zu ihrer Person gespeicherten personenbezogenen Daten sowie eine Kopie dieser Auskunft.</li>
+        <li><strong>c) Recht auf Berichtigung (Art. 16 DS-GVO):</strong> Unverzügliche Berichtigung sie betreffender unrichtiger personenbezogener Daten.</li>
+        <li><strong>d) Recht auf Löschung – Recht auf Vergessen werden (Art. 17 DS-GVO):</strong> Unverzügliche Löschung, sofern die Daten für den ursprünglichen Zweck nicht mehr erforderlich sind, die Einwilligung widerrufen wurde oder die Verarbeitung unrechtmäßig war.</li>
+        <li><strong>e) Recht auf Einschränkung der Verarbeitung (Art. 18 DS-GVO):</strong> Einschränkung der Verarbeitung unter bestimmten Voraussetzungen, z. B. wenn die Richtigkeit der Daten bestritten wird.</li>
+        <li><strong>f) Recht auf Datenübertragbarkeit (Art. 20 DS-GVO):</strong> Erhalt der bereitgestellten personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format sowie das Recht, diese an einen anderen Verantwortlichen zu übermitteln.</li>
+        <li><strong>g) Recht auf Widerspruch (Art. 21 DS-GVO):</strong> Widerspruch gegen die Verarbeitung aus Gründen, die sich aus der besonderen Situation der betroffenen Person ergeben. Die UKF – Unser kleines Fahrgeschäft verarbeitet die personenbezogenen Daten dann nicht mehr, es sei denn, es liegen zwingende schutzwürdige Gründe für die Verarbeitung vor.</li>
+        <li><strong>h) Automatisierte Entscheidungen einschließlich Profiling (Art. 22 DS-GVO):</strong> Recht, nicht einer ausschließlich auf automatisierter Verarbeitung beruhenden Entscheidung unterworfen zu werden, die rechtliche Wirkung entfaltet.</li>
+        <li><strong>i) Recht auf Widerruf einer datenschutzrechtlichen Einwilligung:</strong> Jede betroffene Person hat das Recht, eine Einwilligung zur Verarbeitung personenbezogener Daten jederzeit zu widerrufen.</li>
+      </ul>
+      <p>Zur Ausübung dieser Rechte wenden Sie sich an: service@ukf-ratingen.com</p>
+
+      <h3>6. Rechtsgrundlage der Verarbeitung</h3>
+      <p>Art. 6 I lit. a DS-GVO (Einwilligung), Art. 6 I lit. b DS-GVO (Vertragserfüllung/-anbahnung), Art. 6 I lit. c DS-GVO (gesetzliche Verpflichtung), Art. 6 I lit. d DS-GVO (lebenswichtige Interessen) sowie Art. 6 I lit. f DS-GVO (berechtigte Interessen) dienen als Rechtsgrundlagen für unsere Verarbeitungsvorgänge.</p>
+
+      <h3>7. Berechtigte Interessen an der Verarbeitung</h3>
+      <p>Basiert die Verarbeitung personenbezogener Daten auf Artikel 6 I lit. f DS-GVO ist unser berechtigtes Interesse die Durchführung unserer Geschäftstätigkeit zugunsten des Wohlergehens all unserer Kunden und Mitarbeiter.</p>
+
+      <h3>8. Dauer der Speicherung von personenbezogenen Daten</h3>
+      <p>Das Kriterium für die Dauer der Speicherung ist die jeweilige gesetzliche Aufbewahrungsfrist. Nach Ablauf der Frist werden die entsprechenden Daten routinemäßig gelöscht, sofern sie nicht mehr zur Vertragserfüllung oder Vertragsanbahnung erforderlich sind.</p>
+
+      <h3>9. Gesetzliche oder vertragliche Vorschriften zur Bereitstellung der personenbezogenen Daten</h3>
+      <p>Wir klären Sie darüber auf, dass die Bereitstellung personenbezogener Daten zum Teil gesetzlich vorgeschrieben ist (z. B. Steuervorschriften) oder sich aus vertraglichen Regelungen ergeben kann. Mitunter kann es zu einem Vertragsschluss erforderlich sein, dass eine betroffene Person uns personenbezogene Daten zur Verfügung stellt. Die betroffene Person kann sich jederzeit an uns wenden, um zu erfahren, ob eine Verpflichtung zur Bereitstellung der personenbezogenen Daten besteht und welche Folgen die Nichtbereitstellung hätte.</p>
+
+      <h3>10. Bestehen einer automatisierten Entscheidungsfindung</h3>
+      <p>Als verantwortungsbewusstes Unternehmen verzichten wir auf eine automatische Entscheidungsfindung oder ein Profiling.</p>
+
+      <h3>Kontaktformular</h3>
+      <p>Wenn Sie unser Kontaktformular nutzen, werden die von Ihnen eingegebenen Daten (Name, Kontaktdaten, ggf. Reisewunsch und Nachricht) zum Zweck der Bearbeitung Ihrer Anfrage und für eventuelle Anschlussfragen verarbeitet. Die technische Übermittlung erfolgt über den Dienst Web3Forms (Anbieter: Web3Forms / Astütch LLC, USA), der die Formulardaten ausschließlich zur Zustellung an unsere E-Mail-Adresse verarbeitet und nach Angaben des Anbieters nicht dauerhaft speichert. Dabei werden die Daten an Server in den USA übertragen; es handelt sich um eine Datenübermittlung in ein Drittland. Über die hierfür eingesetzten Schutzmaßnahmen informiert die Datenschutzerklärung des Anbieters. Rechtsgrundlage der Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer funktionierenden Kontaktmöglichkeit). Zum Schutz vor automatisierten Einsendungen setzen wir ein technisches Honeypot-Verfahren ein, bei dem keine zusätzlichen personenbezogenen Daten verarbeitet werden. Weitere Informationen: <a href="https://web3forms.com/privacy" target="_blank" rel="noopener" style="color:var(--green-lt);">web3forms.com/privacy</a></p>
+
+      <h3>Schriftarten und Icons (lokal gehostet)</h3>
+      <p>Schriftarten (Playfair Display, Lato) und Icons (Font Awesome) werden ausschließlich lokal auf unserem eigenen Server gespeichert und ausgeliefert. Beim Aufruf der Seite wird keine Verbindung zu Servern Dritter (z. B. Google Fonts oder Content Delivery Networks) aufgebaut; es werden keine personenbezogenen Daten wie Ihre IP-Adresse an externe Anbieter übermittelt.</p>
+
+      <p style="font-size:0.78rem; color:var(--border); margin-top:1.5rem;">(Diese Datenschutzerklärung wurde durch den Datenschutzerklärungsgenerator der DGD Deutsche Gesellschaft für Datenschutz GmbH, Externer Datenschutzbeauftragter Kaufbeuren, in Kooperation mit dem Anwalt für Datenschutz Christian Solmecke erstellt.)</p>
+    </div>
+  </div>
+
+</div><!-- /page-wrapper -->
+
+<script>
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  function closeNav() { mobileNav.classList.remove('open'); hamburger.setAttribute('aria-expanded', false); }
+
+  // Hide/show header on scroll
+  const hdr = document.getElementById('mainHeader');
+  let lastY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    if (mobileNav.classList.contains('open')) return;
+    hdr.classList.toggle('scrolled', window.scrollY > 10);
+    if (window.scrollY > lastY && window.scrollY > 100) {
+      hdr.classList.add('hidden');
+    } else {
+      hdr.classList.remove('hidden');
+    }
+    lastY = window.scrollY;
+  });
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 90);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.r').forEach(el => obs.observe(el));
+
+  // Kontaktformular
+  document.getElementById('kontaktForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const name      = document.getElementById('kName');
+    const kontakt   = document.getElementById('kKontakt');
+    const ziel      = document.getElementById('kZiel');
+    const nachricht = document.getElementById('kNachricht');
+    const error     = document.getElementById('kError');
+    const success   = document.getElementById('kSuccess');
+    const btn       = document.getElementById('kSubmit');
+
+    // Reset states
+    [name, kontakt].forEach(el => el.style.borderColor = '');
+    error.style.display = 'none';
+
+    // Validate required fields
+    let valid = true;
+    if (!name.value.trim())    { name.style.borderColor    = '#c0392b'; valid = false; }
+    if (!kontakt.value.trim()) { kontakt.style.borderColor = '#c0392b'; valid = false; }
+    if (!valid) { error.style.display = 'block'; name.focus(); return; }
+
+    // Loading state
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Wird gesendet…';
+
+    const payload = {
+      access_key: '506b3402-68b1-4d87-9d18-9203f6353bef',
+      botcheck:   document.getElementById('botcheck').checked,
+      subject:    'Reiseanfrage – ' + name.value.trim(),
+      from_name:  'UKF-Ratingen Kontaktformular',
+      name:       name.value.trim(),
+      kontakt:    kontakt.value.trim(),
+      reiseidee:  ziel.value,
+      nachricht:  nachricht.value.trim() || '(keine weiteren Angaben)'
+    };
+
+    try {
+      const res  = await fetch('https://api.web3forms.com/submit', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body:    JSON.stringify(payload)
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        success.style.display = 'block';
+        btn.innerHTML = '<i class="fas fa-check"></i> Nachricht gesendet';
+        btn.style.opacity = '0.6';
+      } else {
+        throw new Error(data.message || 'Unbekannter Fehler');
+      }
+    } catch (err) {
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Nachricht absenden';
+      error.textContent = 'Fehler beim Senden. Bitte versuchen Sie es erneut oder schreiben Sie direkt an service@ukf-ratingen.com';
+      error.style.display = 'block';
+    }
+  });
+
+  // Modals
+  function openModal(id) {
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.modal-overlay').forEach(m => {
+    m.addEventListener('click', e => { if (e.target === m) closeModal(m.id); });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
+  });
+</script>
+</body>
+</html>
